@@ -52,7 +52,7 @@ public class LatestConverstionExchangeRates {
 		JsonPath jsonObj = response.jsonPath();
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(string);
 		Calendar calendar = Calendar.getInstance();
-		calendar.add(Calendar.DATE, -3);
+		calendar.add(Calendar.DATE, -1);
 
 		String dateString = simpleDateFormat.format(calendar.getTime());
 
@@ -117,8 +117,8 @@ public class LatestConverstionExchangeRates {
 			Assert.assertEquals(rates.size(), symbols.length);
 		} else {
 			Assert.assertEquals(rates.size(), 1);
-			Assert.assertEquals(string2, base);
 		}
+		Assert.assertEquals(string2, base);
 	}
 
 }
